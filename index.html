@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainBolt Quiz 🕹️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <main class="quiz-shell">
+
+        <header class="quiz-top">
+            <div class="brand">
+                <span class="brand-mark">🕹️</span>
+                <span class="brand-name">BrainBolt</span>
+            </div>
+            <div class="stat-pills">
+                <div class="pill streak-pill" id="streak-pill">
+                    <span class="flame">🔥</span>
+                    <span id="streak-count">0</span>
+                </div>
+                <div class="pill score-pill">
+                    <span class="pill-label">Score</span>
+                    <span id="score-count">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="quiz-card" id="quiz">
+
+            <div class="card-top">
+                <div class="q-counter">
+                    Question <span id="q-current">1</span> / <span id="q-total">10</span>
+                </div>
+
+                <div class="timer-ring" id="timer-ring">
+                    <svg viewBox="0 0 64 64">
+                        <circle class="ring-bg" cx="32" cy="32" r="28"></circle>
+                        <circle class="ring-fg" id="ring-fg" cx="32" cy="32" r="28"></circle>
+                    </svg>
+                    <span class="timer-digits" id="timer">15</span>
+                </div>
+            </div>
+
+            <div class="dots" id="dots"></div>
+
+            <h2 id="question">Loading awesome questions...⏳</h2>
+
+            <div class="options-container">
+                <button class="option-btn" id="btn-a" onclick="selectOption('a')">
+                    <span class="option-prefix">A</span> <span id="text-a">Option A</span>
+                </button>
+                <button class="option-btn" id="btn-b" onclick="selectOption('b')">
+                    <span class="option-prefix">B</span> <span id="text-b">Option B</span>
+                </button>
+                <button class="option-btn" id="btn-c" onclick="selectOption('c')">
+                    <span class="option-prefix">C</span> <span id="text-c">Option C</span>
+                </button>
+                <button class="option-btn" id="btn-d" onclick="selectOption('d')">
+                    <span class="option-prefix">D</span> <span id="text-d">Option D</span>
+                </button>
+            </div>
+
+            <button id="next-btn" class="next-btn" onclick="loadNextQuestion()" disabled>Next Question →</button>
+        </div>
+
+        <p class="quiz-foot">PRESS START — speed up your combo for bragging rights 🏆</p>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
